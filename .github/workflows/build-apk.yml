@@ -26,6 +26,11 @@ jobs:
           yes | sdkmanager --licenses > /dev/null || true
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
+      - name: Prepare web assets
+        run: |
+          mkdir -p src/main/assets
+          cp index.html app.js app_logo.png ahmad-dimyati.jpg clue.mp4 musik-detektif-nusantara.wav src/main/assets/
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
