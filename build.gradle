@@ -1,5 +1,28 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+}
 
-android { namespace 'com.ahmaddimyati.tekatakinusantara'; compileSdk 35
-    defaultConfig { applicationId 'com.ahmaddimyati.tekatakinusantara'; minSdk 23; targetSdk 35; versionCode 16; versionName '16.0' }
+android {
+    namespace 'com.ahmaddimyati.tekatakinusantara'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.ahmaddimyati.tekatakinusantara'
+        minSdk 23
+        targetSdk 35
+        versionCode 16
+        versionName '16.0'
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['.']
+            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = []
+            assets.srcDirs = ['.']
+            assets.exclude '**/.git/**'
+            assets.exclude '**/build/**'
+            assets.exclude '**/.gradle/**'
+        }
+    }
 }
