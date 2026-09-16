@@ -19,10 +19,7 @@ android {
             java.srcDirs = ['.']
             manifest.srcFile 'AndroidManifest.xml'
             res.srcDirs = []
-            assets.srcDirs = ['.']
-            assets.exclude '**/.git/**'
-            assets.exclude '**/build/**'
-            assets.exclude '**/.gradle/**'
+            assets.srcDirs = ['src/main/assets']
         }
     }
 }
