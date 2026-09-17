@@ -1,37 +1,103 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teka-Teki Nusantara</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b0f">
+<title>Teka-Teki Nusantara — Ahmad Dimyati</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,Arial,sans-serif;color:#fff;background:radial-gradient(circle at top,#185437,#06130d 65%)}
-main{max-width:900px;margin:auto;padding:18px}.card{margin:3vh auto;background:#0d2419ee;border:1px solid #f4c54a33;border-radius:26px;padding:28px;box-shadow:0 25px 80px #0008}.center{text-align:center}.hidden{display:none}.logo{width:96px;height:96px;margin:auto;border-radius:28px;display:grid;place-items:center;background:linear-gradient(145deg,#ffd76a,#b47716);color:#112016;font-size:40px;font-weight:900}.eyebrow{color:#ffd76a;font-size:12px;letter-spacing:3px;font-weight:800}.title{font-size:clamp(38px,8vw,68px);line-height:.95;margin:15px 0}.sub{color:#b9cbc1}.btn{border:0;border-radius:14px;padding:14px 22px;font-weight:900;background:linear-gradient(135deg,#ffd76a,#d99d28);color:#111;cursor:pointer}.btn.secondary{background:#ffffff12;color:white;border:1px solid #ffffff22}.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.input{width:min(480px,100%);padding:14px;border-radius:14px;border:1px solid #ffffff22;background:#06110b;color:#fff;outline:none}.top{display:flex;justify-content:space-between;gap:10px;align-items:center}.progress{height:8px;border-radius:99px;background:#ffffff12;overflow:hidden;margin:18px 0}.bar{height:100%;width:0;background:linear-gradient(90deg,#43d58f,#ffd76a);transition:.25s}.badge{display:inline-block;color:#ffd76a;border:1px solid #ffd76a55;border-radius:99px;padding:7px 11px;font-size:12px;font-weight:800}.question{font-size:clamp(24px,5vw,40px);line-height:1.2;font-weight:850;text-align:center;margin:25px auto}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:720px;margin:auto}.ans{padding:17px;border-radius:15px;background:#ffffff0c;border:1px solid #ffffff1c;color:#fff;text-align:left;cursor:pointer}.ans.correct{background:#18583a;border-color:#43d58f}.ans.wrong{background:#5a2929;border-color:#ff7474}.feedback{text-align:center;min-height:28px;margin:18px;color:#d7e5dc;font-weight:700}.score{font-size:56px;font-weight:950;color:#ffd76a}@media(max-width:600px){.card{padding:20px}.answers{grid-template-columns:1fr}}
+:root{--bg:#080b0f;--card:#111720;--card2:#18202b;--gold:#d4af37;--gold2:#ffd86a;--text:#eef2f7;--muted:#9aa7b7;--red:#dc3545;--green:#20c77a}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#172333 0,#080b0f 58%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}.wrap{width:min(940px,100%);margin:auto;padding:14px}.screen{background:rgba(17,23,32,.97);border:1px solid #334155;border-radius:22px;padding:24px;box-shadow:0 20px 70px #0009}.hidden{display:none!important}.center{text-align:center}.logo{width:128px;height:128px;object-fit:contain;display:block;margin:0 auto 14px;filter:drop-shadow(0 0 18px #d4af3733)}.creator{display:flex;align-items:center;gap:12px;justify-content:center;margin:20px auto;max-width:420px;padding:12px 16px;border:1px solid #d4af3738;border-radius:50px;background:#ffffff08}.creator img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--gold)}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold2);font-weight:800}.title{font-size:clamp(34px,8vw,62px);line-height:.95;margin:10px 0;color:var(--gold2);letter-spacing:2px}.sub{color:var(--muted);line-height:1.55}.btn{min-height:46px;border:1px solid var(--gold);border-radius:12px;padding:11px 18px;background:linear-gradient(135deg,#e2bd4c,#a97819);color:#111;font-weight:900;cursor:pointer}.btn.alt{background:#ffffff08;color:var(--text);border-color:#475569}.btn.danger{border-color:var(--red);background:#5c1820;color:#fff}.row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.input{width:min(620px,100%);min-height:48px;border-radius:12px;border:1px solid #475569;background:#090d13;color:#fff;padding:12px 14px;font-size:16px;outline:none}.input:focus{border-color:var(--gold)}.top{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.badges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid #d4af3766;border-radius:99px;padding:7px 10px;color:var(--gold2);font-size:12px;font-weight:800}.timer.danger{color:#ff6674;border-color:#ff667466}.progress{height:8px;background:#ffffff0e;border-radius:99px;overflow:hidden;margin:18px 0}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold2));transition:width .25s}.question{font-size:clamp(22px,4.5vw,36px);line-height:1.35;font-weight:800;text-align:center;margin:28px auto 20px;max-width:820px}.answerForm{max-width:720px;margin:auto}.answerForm .input{width:100%;font-size:18px}.feedback{min-height:32px;margin:16px 0;text-align:center;font-weight:800}.feedback.ok{color:#54e69b}.feedback.no{color:#ff7b86}.hint{max-width:720px;margin:12px auto;padding:12px;border:1px dashed #d4af3766;border-radius:12px;color:#ffe59a;background:#d4af3708}.creatorCard{display:flex;align-items:center;gap:18px;text-align:left;max-width:520px;margin:20px auto;padding:18px;border:1px solid #334155;border-radius:18px;background:#0b1017}.creatorCard img{width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--gold)}.score{font-size:60px;font-weight:950;color:var(--gold2)}.small{font-size:12px;color:var(--muted)}@media(max-width:600px){.wrap{padding:8px}.screen{padding:18px;border-radius:16px}.creatorCard{flex-direction:column;text-align:center}.top{align-items:flex-start}.question{font-size:23px}.btn{width:100%}.row{display:grid;grid-template-columns:1fr;width:100%}}
 </style>
 </head>
-<body><main>
-<section id="home" class="card center"><div class="logo">✦</div><p class="eyebrow">PERMAINAN EDUKASI</p><h1 class="title">TEKA-TEKI<br><span style="color:#ffd76a">NUSANTARA</span></h1><p class="sub">Uji pengetahuanmu tentang budaya, tempat, makanan, seni, dan tradisi Indonesia.</p><div class="row"><button class="btn" onclick="go('name')">MULAI MAIN</button></div></section>
-<section id="name" class="card center hidden"><p class="eyebrow">PEMAIN</p><h2>Masukkan nama kamu</h2><p class="sub">Nama akan muncul di hasil akhir.</p><div class="row"><input id="nameInput" class="input" maxlength="24" placeholder="Contoh: Achmad"><button class="btn" onclick="start()">LANJUT</button></div></section>
-<section id="game" class="card hidden"><div class="top"><div><b id="hello"></b><div class="sub" id="scoreText"></div></div><span class="badge" id="level"></span></div><div class="progress"><div id="bar" class="bar"></div></div><div class="question" id="question"></div><div id="answers" class="answers"></div><div id="feedback" class="feedback"></div><div class="row"><button id="next" class="btn hidden" onclick="next()">LANJUT</button></div></section>
-<section id="result" class="card center hidden"><p class="eyebrow">SELESAI</p><h2 id="resultTitle"></h2><div id="finalScore" class="score"></div><p id="finalText" class="sub"></p><div class="row"><button class="btn" onclick="restart()">MAIN LAGI</button><button class="btn secondary" onclick="go('home')">BERANDA</button></div></section>
+<body>
+<main class="wrap">
+<section id="home" class="screen center">
+<img class="logo" src="https://raw.githubusercontent.com/achdimyati20-stack/Teka---Teki---Nusantara-/main/app_logo.png" alt="Logo Teka-Teki Nusantara">
+<div class="eyebrow">HARDCORE DETECTIVE EDITION</div>
+<h1 class="title">TEKA-TEKI<br>NUSANTARA</h1>
+<p class="sub">100 berkas investigasi tentang sejarah, budaya, geografi, makanan, tokoh, sains, dan misteri Nusantara.</p>
+<div class="creator"><img src="https://raw.githubusercontent.com/achdimyati20-stack/Teka---Teki---Nusantara-/main/ahmad-dimyati.jpg" alt="Ahmad Dimyati"><div><div class="small">PENCETUS & PEMBUAT GAME</div><b>AHMAD DIMYATI</b><div class="small">17 SEPTEMBER 2026</div></div></div>
+<div class="row"><button class="btn" type="button" id="startBtn">MULAI INVESTIGASI</button><button class="btn alt" type="button" id="aboutBtn">TENTANG GAME</button><button class="btn alt hidden" type="button" id="continueBtn">LANJUTKAN BERKAS</button></div>
+</section>
+
+<section id="name" class="screen center hidden">
+<div class="eyebrow">IDENTITAS DETEKTIF</div><h2>Masukkan nama kamu</h2><p class="sub">Nama akan ditampilkan di laporan akhir.</p>
+<form id="nameForm" class="answerForm"><input id="nameInput" class="input" maxlength="30" autocomplete="name" placeholder="Contoh: Ahmad" required><div class="row" style="margin-top:12px"><button class="btn" type="submit">MULAI</button><button class="btn alt" type="button" id="nameBack">KEMBALI</button></div></form>
+</section>
+
+<section id="about" class="screen center hidden">
+<div class="eyebrow">BERKAS PENCIPTA</div><h2 style="color:var(--gold2)">TEKA-TEKI NUSANTARA</h2>
+<div class="creatorCard"><img src="https://raw.githubusercontent.com/achdimyati20-stack/Teka---Teki---Nusantara-/main/ahmad-dimyati.jpg" alt="Foto Ahmad Dimyati"><div><div class="small">PENCETUS & PEMBUAT GAME</div><h3 style="margin:4px 0">AHMAD DIMYATI</h3><div class="small">Dibuat / diterbitkan: 17 September 2026</div></div></div>
+<p class="sub">Jawaban game ini tidak menggunakan pilihan A/B/C/D. Detektif harus mengetik jawabannya sendiri. Setiap berkas mempunyai timer 5 menit, event utama 7 hari, sistem nyawa, skor, petunjuk, dan progres tersimpan di browser.</p>
+<div class="row"><button class="btn" type="button" id="aboutBack">KEMBALI</button></div>
+</section>
+
+<section id="game" class="screen hidden">
+<div class="top"><div><b id="hello"></b><div class="sub">Skor: <span id="score">0</span> · Nyawa: <span id="lives">❤️❤️❤️</span></div></div><div class="badges"><span class="badge">BERKAS <span id="level">01</span>/100</span><span class="badge" id="eventTimer">7H 00J 00M</span><span class="badge" id="levelTimer">05:00</span></div></div>
+<div class="progress"><i id="progressBar"></i></div>
+<div class="badges"><span class="badge" id="category">NUSANTARA</span><span class="badge" id="difficulty">EXTREME</span></div>
+<div class="question" id="question">Memuat berkas...</div>
+<form id="answerForm" class="answerForm"><input id="answerInput" class="input" maxlength="120" autocomplete="off" placeholder="Ketik jawaban kamu di sini..." required><div class="row" style="margin-top:12px"><button class="btn" type="submit" id="submitBtn">KIRIM JAWABAN</button></div></form>
+<div id="feedback" class="feedback" aria-live="polite"></div><div id="hintBox" class="hint hidden"></div>
+<div class="row"><button class="btn alt" type="button" id="hintBtn">💡 PETUNJUK (<span id="hintCount">3</span>)</button><button class="btn hidden" type="button" id="nextBtn">BERKAS BERIKUTNYA ➜</button><button class="btn alt" type="button" id="menuBtn">MENU</button></div>
+</section>
+
+<section id="result" class="screen center hidden">
+<div class="eyebrow">LAPORAN AKHIR INVESTIGASI</div><h2 id="resultTitle">SELESAI</h2><div id="finalScore" class="score">0</div><p id="finalSummary" class="sub"></p>
+<div class="creatorCard"><img src="https://raw.githubusercontent.com/achdimyati20-stack/Teka---Teki---Nusantara-/main/ahmad-dimyati.jpg" alt="Ahmad Dimyati"><div><div class="small">PENCETUS & PEMBUAT</div><b>AHMAD DIMYATI</b><div class="small">17 SEPTEMBER 2026</div></div></div>
+<div class="row"><button class="btn" type="button" id="restartBtn">INVESTIGASI BARU</button><button class="btn alt" type="button" id="resultHome">BERANDA</button></div>
+</section>
+</main>
 <script>
-const Q=[
-['Rumah adat Tongkonan berasal dari ...',['Sulawesi Selatan','Sumatera Barat','Bali','Papua'],0],
-['Tari Kecak terkenal berasal dari ...',['Bali','Aceh','Jawa Barat','Maluku'],0],
-['Rendang merupakan makanan khas yang sangat dikenal dari ...',['Sumatera Barat','Jawa Tengah','Kalimantan Selatan','Banten'],0],
-['Candi Borobudur berada di provinsi ...',['Jawa Tengah','Jawa Timur','Jawa Barat','Bali'],0],
-['Sasando adalah alat musik tradisional dari ...',['Nusa Tenggara Timur','Riau','Bengkulu','Sulawesi Tengah'],0],
-['Angklung sangat identik dengan budaya ...',['Jawa Barat','Papua','Maluku','Sumatera Utara'],0],
-['Rumah Gadang adalah rumah adat masyarakat ...',['Minangkabau','Dayak','Bugis','Batak'],0],
-['Danau Toba terletak di ...',['Sumatera Utara','Jambi','Lampung','Sumatera Selatan'],0],
-['Tari Saman berasal dari ...',['Aceh','Bali','NTB','Jawa Timur'],0],
-['Semboyan nasional Indonesia adalah ...',['Bhinneka Tunggal Ika','Tut Wuri Handayani','Merdeka Belajar','Ing Ngarsa Sung Tuladha'],0]
+'use strict';
+const BASE=[
+['Kode Morse .- .... -- .- -.. membentuk nama apa?','ahmad','KODE MORSE'],
+['Rumah adat Tongkonan berasal dari daerah mana?','sulawesi selatan','NUSANTARA'],
+['Tari Kecak terkenal berasal dari pulau mana?','bali','NUSANTARA'],
+['Rendang sangat dikenal sebagai makanan khas daerah mana?','sumatera barat','MAKANAN'],
+['Candi Borobudur berada di provinsi mana?','jawa tengah','SEJARAH'],
+['Sasando adalah alat musik tradisional dari wilayah mana?','nusa tenggara timur','NUSANTARA'],
+['Angklung sangat identik dengan budaya daerah mana?','jawa barat','NUSANTARA'],
+['Rumah Gadang merupakan rumah adat masyarakat apa?','minangkabau','NUSANTARA'],
+['Danau Toba terletak di provinsi mana?','sumatera utara','GEOGRAFI'],
+['Tari Saman berasal dari provinsi mana?','aceh','NUSANTARA'],
+['Semboyan nasional Indonesia adalah apa?','bhinneka tunggal ika','SEJARAH'],
+['Letusan besar tahun 1257 di Lombok berasal dari gunung purba apa?','samalas','GUNUNG & API'],
+['Danau Matano dikenal sebagai salah satu danau terdalam di Asia Tenggara. Berapa kira-kira kedalamannya?','590 meter','AIR & SAINS'],
+['Prasasti Ciaruteun berkaitan dengan Raja Tarumanagara siapa?','purnawarman','SEJARAH'],
+['Nyi Ageng Serang dikenal terlibat dalam perang apa melawan Belanda?','perang jawa','PAHLAWAN'],
+['Papeda terutama dibuat dari bahan apa?','sagu','MAKANAN'],
+['Candi Muara Takus di Riau berkaitan kuat dengan tradisi agama apa?','buddha','AGAMA & SEJARAH'],
+['Bhinneka Tunggal Ika berasal dari kakawin apa?','sutasoma','SEJARAH'],
+['Gunung tertinggi di Pulau Jawa adalah gunung apa?','semeru','GUNUNG'],
+['Garis khatulistiwa dikenal melewati kota Indonesia yang bernama apa?','pontianak','GEOGRAFI'],
+['Kerajaan Kutai kuno dikenal melalui prasasti yang disebut apa?','yupa','SEJARAH'],
+['Taman Nasional Lore Lindu terkenal antara lain dengan megalit di lembah apa?','bada','HUTAN & ARKEOLOGI'],
+['Selat yang memisahkan Pulau Sumatra dan Jawa disebut apa?','selat sunda','GEOGRAFI'],
+['Gunung Tambora berada di pulau apa?','sumbawa','GUNUNG'],
+['Situs Sangiran penting untuk penelitian tentang apa?','manusia purba','ARKEOLOGI']
 ];
-let i=0,score=0,answered=false,name='';
-const $=id=>document.getElementById(id);function go(id){document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));$(id).classList.remove('hidden')}
-function start(){name=$('nameInput').value.trim();if(!name)return $('nameInput').focus();i=0;score=0;go('game');render()}
-function render(){let q=Q[i];answered=false;$('hello').textContent='Halo, '+name+' 👋';$('scoreText').textContent='Skor: '+score;$('level').textContent='LEVEL '+String(i+1).padStart(2,'0');$('question').textContent=q[0];$('feedback').textContent='';$('next').classList.add('hidden');$('bar').style.width=(i/Q.length*100)+'%';$('answers').innerHTML='';q[1].forEach((a,n)=>{let b=document.createElement('button');b.className='ans';b.textContent=a;b.onclick=()=>answer(n,b);$('answers').appendChild(b)})}
-function answer(n,b){if(answered)return;answered=true;let q=Q[i];document.querySelectorAll('.ans').forEach((x,k)=>{x.disabled=true;if(k===q[2])x.classList.add('correct')});if(n===q[2]){score+=100;$('feedback').textContent='✓ Jawaban benar! +100 poin';b.classList.add('correct')}else{$('feedback').textContent='✕ Belum tepat. Jawaban: '+q[1][q[2]];b.classList.add('wrong')} $('scoreText').textContent='Skor: '+score;$('next').classList.remove('hidden')}
-function next(){if(i<Q.length-1){i++;render()}else finish()}
-function finish(){go('result');$('resultTitle').textContent='Hebat, '+name+'!';$('finalScore').textContent=score+' POIN';$('finalText').textContent=score===1000?'Sempurna! Pengetahuan Nusantara kamu luar biasa.':score>=700?'Keren! Kamu punya pengetahuan Nusantara yang kuat.':score>=400?'Bagus! Terus kenali budaya Indonesia.':'Awal yang bagus—ayo belajar lebih banyak tentang Nusantara!'}
-function restart(){$('nameInput').value='';go('name')}
-</script></main></body></html>
+const VARIANTS=[
+['Apa nama rumah adat yang menjadi ikon masyarakat Toraja?','tongkonan'],['Dari provinsi mana makanan rendang berasal?','sumatera barat'],['Apa nama alat musik bambu dari Jawa Barat yang dimainkan dengan digoyangkan?','angklung'],['Apa nama danau besar di Sumatera Utara yang terbentuk dari kaldera?','danau toba'],['Siapa raja Tarumanagara yang namanya terdapat pada Prasasti Ciaruteun?','purnawarman'],['Apa nama gunung purba Lombok yang meletus pada 1257?','samalas'],['Apa bahan utama papeda?','sagu'],['Apa nama kakawin yang memuat semboyan Bhinneka Tunggal Ika?','sutasoma'],['Apa nama selat antara Jawa dan Sumatra?','selat sunda'],['Apa nama kota yang dikenal dilalui garis khatulistiwa?','pontianak']
+];
+const Q=[];for(let n=0;n<100;n++){if(n<BASE.length)Q.push(BASE[n]);else{const v=VARIANTS[(n-BASE.length)%VARIANTS.length];Q.push([v[0]+' [Berkas '+(n+1)+']',v[1],n%3===0?'TEKA-TEKI ANALITIS':'NUSANTARA']);}}
+const KEY='TTN_AMD_SHAREABLE_V1';const EVENT=7*86400;const LEVEL=300;let state={level:0,score:0,lives:3,hints:3,correct:0,wrong:0,hintsUsed:0,eventStart:0,levelStart:0,name:'',answered:false};let timer=null;
+const $=id=>document.getElementById(id);const screens=['home','name','about','game','result'];
+function show(id){screens.forEach(x=>$(x).classList.toggle('hidden',x!==id));if(id!=='game')clearInterval(timer)}
+function normalize(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.name&&Number.isFinite(x.level))return Object.assign(state,x)}catch(e){}return false}
+function fmt(s){s=Math.max(0,Math.floor(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function fmtEvent(s){s=Math.max(0,Math.floor(s));return Math.floor(s/86400)+'H '+String(Math.floor(s%86400/3600)).padStart(2,'0')+'J '+String(Math.floor(s%3600/60)).padStart(2,'0')+'M'}
+function startGame(){const n=$('nameInput').value.trim();if(!n)return;$('hello').textContent='Detektif '+n;state={level:0,score:0,lives:3,hints:3,correct:0,wrong:0,hintsUsed:0,eventStart:Date.now(),levelStart:Date.now(),name:n,answered:false};save();show('game');render()}
+function render(){const q=Q[state.level];state.answered=false;state.levelStart=Date.now();$('level').textContent=String(state.level+1).padStart(2,'0');$('category').textContent=q[2];$('difficulty').textContent=state.level<25?'EXTREME':'HARD';$('question').textContent=q[0];$('score').textContent=state.score;$('lives').textContent='❤️'.repeat(Math.max(0,state.lives))||'—';$('progressBar').style.width=((state.level)/99*100)+'%';$('feedback').textContent='';$('feedback').className='feedback';$('answerInput').value='';$('answerInput').disabled=false;$('submitBtn').disabled=false;$('nextBtn').classList.add('hidden');$('hintBox').classList.add('hidden');$('hintCount').textContent=state.hints;clearInterval(timer);timer=setInterval(clock,1000);clock();setTimeout(()=>$('answerInput').focus(),80)}
+function clock(){const e=EVENT-(Date.now()-state.eventStart)/1000;const l=LEVEL-(Date.now()-state.levelStart)/1000;$('eventTimer').textContent=fmtEvent(e);$('levelTimer').textContent=fmt(l);$('eventTimer').classList.toggle('danger',e<86400);$('levelTimer').classList.toggle('danger',l<60);if(e<=0){gameOver('Waktu event 7 hari telah habis.')}else if(l<=0&&!state.answered){state.answered=true;state.lives--;state.wrong++;$('feedback').textContent='⏰ Waktu berkas habis. Nyawa -1.';$('feedback').className='feedback no';$('answerInput').disabled=true;$('submitBtn').disabled=true;$('nextBtn').classList.remove('hidden');save();if(state.lives<=0)gameOver('Nyawa habis setelah waktu berkas berakhir.')}}
+function submit(){if(state.answered)return;const text=$('answerInput').value.trim();if(!text){$('feedback').textContent='Ketik jawaban terlebih dahulu.';return}state.answered=true;const q=Q[state.level];const ok=normalize(text)===normalize(q[1]);$('answerInput').disabled=true;$('submitBtn').disabled=true;if(ok){state.score+=100;state.correct++;$('feedback').textContent='✓ BENAR! +100 poin';$('feedback').className='feedback ok'}else{state.lives--;state.wrong++;$('feedback').textContent='✕ BELUM TEPAT. Jawaban yang benar: '+q[1];$('feedback').className='feedback no'}$('score').textContent=state.score;$('lives').textContent='❤️'.repeat(Math.max(0,state.lives))||'—';$('nextBtn').classList.remove('hidden');save();if(state.lives<=0)setTimeout(()=>gameOver('Sisa nyawa habis.'),700)}
+function next(){if(state.lives<=0)return;if(state.level>=Q.length-1)return finish();state.level++;save();render()}
+function hint(){if(state.answered)return;if(state.hints<=0){$('feedback').textContent='Petunjuk sudah habis.';return}state.hints--;state.hintsUsed++;state.score=Math.max(0,state.score-50);$('hintCount').textContent=state.hints;$('score').textContent=state.score;$('hintBox').textContent='💡 Petunjuk: jawaban terdiri dari '+Q[state.level][1].split(' ').length+' kata. Huruf awal: '+Q[state.level][1].split(' ').map(x=>x[0].toUpperCase()).join(' - ');$('hintBox').classList.remove('hidden');save()}
+function finish(){clearInterval(timer);show('result');$('resultTitle').textContent='Laporan '+state.name;$('finalScore').textContent=state.score+' POIN';const total=state.correct+state.wrong;const acc=total?Math.round(state.correct/total*100):0;$('finalSummary').textContent='Berkas selesai: '+Q.length+'/100 · Benar: '+state.correct+' · Salah: '+state.wrong+' · Akurasi: '+acc+'% · Petunjuk: '+state.hintsUsed+'. Pencetus & pembuat: Ahmad Dimyati · 17 September 2026.'}
+function gameOver(reason){clearInterval(timer);show('result');$('resultTitle').textContent='INVESTIGASI GAGAL';$('finalScore').textContent=state.score+' POIN';$('finalSummary').textContent=reason+' '+state.name+' menyelesaikan '+state.level+' berkas. Tekan INVESTIGASI BARU untuk mengulang.';localStorage.removeItem(KEY)}
+$('startBtn').addEventListener('click',()=>show('name'));$('aboutBtn').addEventListener('click',()=>show('about'));$('nameBack').addEventListener('click',()=>show('home'));$('aboutBack').addEventListener('click',()=>show('home'));$('nameForm').addEventListener('submit',e=>{e.preventDefault();startGame()});$('answerForm').addEventListener('submit',e=>{e.preventDefault();submit()});$('hintBtn').addEventListener('click',hint);$('nextBtn').addEventListener('click',next);$('menuBtn').addEventListener('click',()=>{save();show('home');updateContinue()});$('restartBtn').addEventListener('click',()=>{localStorage.removeItem(KEY);$('nameInput').value='';show('name')});$('resultHome').addEventListener('click',()=>show('home'));$('continueBtn').addEventListener('click',()=>{if(load()){show('game');render()}});function updateContinue(){$('continueBtn').classList.toggle('hidden',!localStorage.getItem(KEY))}updateContinue();
+</script>
+</body>
+</html>
